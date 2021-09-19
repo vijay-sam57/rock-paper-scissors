@@ -64,9 +64,15 @@ function gameOver() {
 }
 
 const pl = document.querySelector(".pl-btns");
+const cp = document.querySelectorAll(".cp-btns button");
 pl.addEventListener("click", (e) => {
   const desp = document.querySelector(".desp");
   let ch = computerPlay();
+  cp.forEach((btn) => {
+    if (btn.value.toUpperCase() === ch) {
+      btn.style.animation = "enlarge 3s linear";
+    }
+  });
   const result = document.createElement("h4");
   result.textContent = gamePlay(e.target.value, ch);
   const plscore = document.querySelector("#pl-score");
