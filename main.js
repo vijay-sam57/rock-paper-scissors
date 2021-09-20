@@ -42,12 +42,12 @@ let computerScore = 0;
 function gameScore(winner) {
   if (winner === "Player") {
     playerScore += 1;
-    return `\nPlayerscore = ${playerScore} Computerscore = ${computerScore}`;
+    return `<br>Playerscore = ${playerScore} Computerscore = ${computerScore}`;
   } else if (winner === "Computer") {
     computerScore += 1;
-    return `\nPlayerscore = ${playerScore} Computerscore = ${computerScore}`;
+    return `<br>Playerscore = ${playerScore} Computerscore = ${computerScore}`;
   } else {
-    return `\nPlayerscore = ${playerScore} Computerscore = ${computerScore}`;
+    return `<br>Playerscore = ${playerScore} Computerscore = ${computerScore}`;
   }
 }
 
@@ -77,7 +77,7 @@ pl.addEventListener("click", (e) => {
     }
   });
   const result = document.createElement("h3");
-  result.textContent = gamePlay(e.target.value, ch);
+  result.innerHTML = gamePlay(e.target.value, ch);
   const plscore = document.querySelector("#pl-score");
   const cpscore = document.querySelector("#cp-score");
   plscore.textContent = playerScore;
