@@ -70,7 +70,10 @@ pl.addEventListener("click", (e) => {
   let ch = computerPlay();
   cp.forEach((btn) => {
     if (btn.value.toUpperCase() === ch) {
-      btn.style.animation = "enlarge 3s linear";
+      btn.classList.add("enlarge-ani");
+      btn.addEventListener("animationend", () => {
+        btn.classList.remove("enlarge-ani");
+      });
     }
   });
   const result = document.createElement("h4");
@@ -85,5 +88,7 @@ pl.addEventListener("click", (e) => {
     finalResult.textContent = gameOver();
     desp.textContent = "";
     desp.appendChild(finalResult);
+    playerScore = computerScore = 0;
   }
 });
+pl.removeEventListener("click");

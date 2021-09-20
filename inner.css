@@ -93,6 +93,10 @@
   }
 }
 
+.enlarge-ani {
+  animation: enlarge 2s ease-in;
+  -webkit-animation: enlarge 2s ease-in;
+}
 .desp {
   min-height: 43vh;
 }
