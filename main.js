@@ -76,19 +76,25 @@ pl.addEventListener("click", (e) => {
       });
     }
   });
-  const result = document.createElement("h4");
+  const result = document.createElement("h3");
   result.textContent = gamePlay(e.target.value, ch);
   const plscore = document.querySelector("#pl-score");
   const cpscore = document.querySelector("#cp-score");
   plscore.textContent = playerScore;
   cpscore.textContent = computerScore;
-  desp.appendChild(result);
+  desp.textContent = "";
+  desp.insertBefore(result, desp.firstChild);
   if (playerScore === 5 || computerScore === 5) {
-    const finalResult = document.createElement("h3");
+    const finalResult = document.createElement("h2");
     finalResult.textContent = gameOver();
     desp.textContent = "";
-    desp.appendChild(finalResult);
+    plscore.textContent = 0;
+    cpscore.textContent = 0;
     playerScore = computerScore = 0;
+    desp.appendChild(finalResult);
+    const playAgain = document.createElement("h2");
+    playAgain.textContent = "Click on the player button to play again.";
+    desp.appendChild(playAgain);
   }
 });
 pl.removeEventListener("click");
