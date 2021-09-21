@@ -23,17 +23,28 @@
     width: 100%;
   }
 
+  .player {
+    order: 3;
+  }
+
   .score {
     text-align: center;
     padding-left: 10px;
+    order: 2;
   }
 
   .pl-img {
     padding-right: 30px;
+    order: 1;
+  }
+
+  .pl-btns {
+    order: 2;
   }
 
   .cp-img {
     padding-right: 10px;
+    order: 2;
   }
 
   .desp {
